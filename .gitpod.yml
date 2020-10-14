@@ -14,7 +14,6 @@ tasks:
       export BACKEND_URL=$(gp url 5001 | sed 's/https:\/\///g') &&
       envsubst < client/src/environments/environment.template.ts > client/src/environments/environment.ts &&
       cd client &&
-      npm install -g @angular/cli &&
-      ng analytics off &&
       npm install
     command: npm start
+    before: export NG_CLI_ANALYTICS=ci
