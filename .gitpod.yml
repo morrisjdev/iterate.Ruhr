@@ -9,6 +9,14 @@ ports:
     onOpen: open-browser
     
 tasks:
-  - command: cd server/iterate.Ruhr-Server && dotnet run --urls http://0.0.0.0:5001
-  - init: export BACKEND_URL=$(gp url 5001 | sed 's/https:\/\///g') && envsubst < client/src/environments/environment.template.ts > client/src/environments/environment.ts && cd client && npm install
+  - command: >
+      cd server/iterate.Ruhr-Server &&
+      dotnet run --urls http://0.0.0.0:5001
+  - init: >
+      export BACKEND_URL=$(gp url 5001 | sed 's/https:\/\///g') &&
+      envsubst < client/src/environments/environment.template.ts > client/src/environments/environment.ts &&
+      cd client &&
+      npm install &&
+      npm install -g @angular/cli &&
+      ng analytics off
     command: npm start
