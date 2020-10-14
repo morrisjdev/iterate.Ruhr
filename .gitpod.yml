@@ -11,4 +11,4 @@ ports:
 tasks:
   - command: cd server/iterate.Ruhr-Server && dotnet run --urls http://0.0.0.0:5001
   - init: cd client && npm install
-    command: cd client && npm start
+    command: npm start
