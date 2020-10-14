@@ -1,0 +1,14 @@
+﻿image: gitpod/workspace-dotnet
+
+ports:
+  - port: 5000
+    onOpen: ignore
+  - port: 5001
+    onOpen: open-preview
+  - port: 4200
+    onOpen: open-browser
+    
+tasks:
+  - command: cd server/iterate.Ruhr-Server && dotnet run --urls http://0.0.0.0:5001
+  - init: cd client && npm install
+    command: cd client && npm start

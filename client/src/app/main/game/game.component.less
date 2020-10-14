@@ -1,0 +1,44 @@
+.fields {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+
+  height: 500px;
+  width: 500px;
+
+  .field {
+    flex-basis: 100% / 3;
+    height: 100% / 3;
+    flex-grow: 0;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    border: 1px solid black;
+    display: flex;
+    pointer-events: none;
+
+    .marker {
+      flex-grow: 1;
+      line-height: .8em;
+      font-size: 150px;
+      text-align: center;
+
+      &.is-owner {
+        color: #35985b;
+      }
+    }
+  }
+
+  &.active {
+    .field {
+      &.empty {
+        pointer-events: initial;
+        cursor: pointer;
+
+        &:hover {
+          border-style: dashed;
+        }
+      }
+    }
+  }
+}
