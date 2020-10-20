@@ -18,5 +18,4 @@ tasks:
       envsubst < src/environments/environment.template.ts > src/environments/environment.ts
       npm install
     command: |
-      export NG_CLI_ANALYTICS=ci
-      npm start
+      npm run start-ci
