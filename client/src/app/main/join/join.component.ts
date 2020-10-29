@@ -1,7 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {Observable} from 'rxjs';
-import {pluck, shareReplay} from 'rxjs/operators';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-join',
@@ -10,11 +7,11 @@ import {pluck, shareReplay} from 'rxjs/operators';
 })
 export class JoinComponent implements OnInit {
 
-  gameId$: Observable<string>;
-
-  constructor(private route: ActivatedRoute) {
-    this.gameId$ = this.route.params.pipe(pluck('gameId'), shareReplay());
-  }
+  // gameId$: Observable<string>;
+  //
+  // constructor(private route: ActivatedRoute) {
+  //   this.gameId$ = this.route.params.pipe(pluck('gameId'), shareReplay());
+  // }
 
   ngOnInit(): void {
   }

@@ -1,10 +1,9 @@
 ﻿using iterate.Ruhr_Server.Data.Models;
 using Microsoft.EntityFrameworkCore;
-using SapphireDb;
 
 namespace iterate.Ruhr_Server.Data
 {
-    public class Context : SapphireDbContext
+    public class Context : DbContext
     {
         public Context(DbContextOptions<Context> options) : base(options)
         {

@@ -3,12 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 import {StartComponent} from './start/start.component';
 import {JoinComponent} from './join/join.component';
 import {GameComponent} from './game/game.component';
+import {DemoComponent} from './demo/demo.component';
 
 
 const routes: Routes = [
   { path: 'start', component: StartComponent },
   { path: 'game/:gameId', component: JoinComponent },
   { path: 'game/:gameId/:player', component: GameComponent },
+  { path: 'demo', component: DemoComponent },
   { path: '**', redirectTo: 'start', pathMatch: 'full' }
 ];
 

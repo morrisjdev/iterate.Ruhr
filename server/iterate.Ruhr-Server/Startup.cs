@@ -1,16 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using FileContextCore;
-using iterate.Ruhr_Server.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using SapphireDb.Extensions;
-using SapphireDb.Models;
 
 namespace iterate.Ruhr_Server
 {
@@ -19,10 +11,7 @@ namespace iterate.Ruhr_Server
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddSapphireDb()
-                .AddContext<Context>(cfg => cfg.UseFileContextDatabase("iterate.Ruhr"));
-
+        { 
             services.AddCors();
         }
 
@@ -36,8 +25,6 @@ namespace iterate.Ruhr_Server
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseSapphireDb();
-            
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>

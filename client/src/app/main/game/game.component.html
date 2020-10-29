@@ -1,35 +1,36 @@
-<h2>Spiel: {{ (game$ | async)?.key }}</h2>
+<!--<h2>Spiel: {{ (game$ | async)?.key }}</h2>-->
 
-<h2>
-  Du bist
-  <ng-container *ngIf="(playerMode$ | async) === playerModeEnum.Spectator">Zuschauer</ng-container>
-  <ng-container *ngIf="(playerMode$ | async) === playerModeEnum.Player1">Spieler 1</ng-container>
-  <ng-container *ngIf="(playerMode$ | async) === playerModeEnum.Player2">Spieler 2</ng-container>
-</h2>
+<!--<h2>-->
+<!--  Du bist-->
+<!--  <ng-container *ngIf="(playerMode$ | async) === playerModeEnum.Spectator">Zuschauer</ng-container>-->
+<!--  <ng-container *ngIf="(playerMode$ | async) === playerModeEnum.Player1">Spieler 1</ng-container>-->
+<!--  <ng-container *ngIf="(playerMode$ | async) === playerModeEnum.Player2">Spieler 2</ng-container>-->
+<!--</h2>-->
 
-<h3 *ngIf="(gameWinner$ | async) === -1">
-  <ng-container *ngIf="(game$ | async)?.currentPlayer === (playerMode$ | async); else otherPlayer">
-    Du bist an der Reihe
-  </ng-container>
-  <ng-template #otherPlayer>
-    Spieler {{(game$ | async)?.currentPlayer}} ist an der Reihe
-  </ng-template>
-</h3>
+<!--<h3 *ngIf="(gameWinner$ | async) === -1">-->
+<!--  <ng-container *ngIf="(game$ | async)?.currentPlayer === (playerMode$ | async); else otherPlayer">-->
+<!--    Du bist an der Reihe-->
+<!--  </ng-container>-->
+<!--  <ng-template #otherPlayer>-->
+<!--    Spieler {{(game$ | async)?.currentPlayer}} ist an der Reihe-->
+<!--  </ng-template>-->
+<!--</h3>-->
 
-<h3 *ngIf="(gameWinner$ | async) !== -1">
-  Spieler {{gameWinner$ | async}} hat gewonnen
-</h3>
+<!--<h3 *ngIf="(gameWinner$ | async) !== -1">-->
+<!--  Spieler {{gameWinner$ | async}} hat gewonnen-->
+<!--</h3>-->
 
-<h4>
-  x = Spieler 1, o = Spieler 2
-</h4>
+<!--<h4>-->
+<!--  x = Spieler 1, o = Spieler 2-->
+<!--</h4>-->
 
-<div class="fields" [class.active]="(game$ | async)?.currentPlayer === (playerMode$ | async) && (gameWinner$ | async) === -1">
-  <div class="field" *ngFor="let field of fields$ | async"
-       [class.empty]="field.value === fieldValueEnum.Empty" (click)="setField(field)">
-    <div class="marker" [class.is-owner]="field.value === (playerMode$ | async)">
-      <ng-container *ngIf="field.value === fieldValueEnum.Player1">x</ng-container>
-      <ng-container *ngIf="field.value === fieldValueEnum.Player2">o</ng-container>
-    </div>
-  </div>
-</div>
+<!--<div class="fields"-->
+<!--     [class.active]="(game$ | async)?.currentPlayer === (playerMode$ | async) && (gameWinner$ | async) === -1">-->
+<!--  <div class="field" *ngFor="let field of fields$ | async"-->
+<!--       [class.empty]="field.value === fieldValueEnum.Empty" (click)="setField(field)">-->
+<!--    <div class="marker" [class.is-owner]="field.value === (playerMode$ | async)">-->
+<!--      <ng-container *ngIf="field.value === fieldValueEnum.Player1">x</ng-container>-->
+<!--      <ng-container *ngIf="field.value === fieldValueEnum.Player2">o</ng-container>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
